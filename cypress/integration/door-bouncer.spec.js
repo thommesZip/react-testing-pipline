@@ -1,4 +1,4 @@
-describe("Authenticator:", function () {
+describe("All tests", function () {
   beforeEach(function () {
     cy.visit("/");
   });
