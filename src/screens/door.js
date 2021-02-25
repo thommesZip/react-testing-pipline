@@ -60,13 +60,10 @@ export default function Door() {
               fields={fieldSettings}
               disabled={loading}
               onSubmit={async ({ name }, { resetForm }) => {
-                console.log("🥶 submitting");
                 const result = await checkGuestlist(name);
                 if (result.authorized) {
-                  console.log("🥶 yay");
                   history.push("/come-in");
                 } else {
-                  console.log("🥶 nooo");
                   setTemporaryValue(
                     null,
                     result.message,
@@ -81,8 +78,6 @@ export default function Door() {
                   );
                   resetForm();
                 }
-
-                console.log("🥶 ???");
               }}
             >
               <div className="columns is-centered">
@@ -96,9 +91,13 @@ export default function Door() {
             </Form>
 
             {errorMessage ? (
-              <div className="columns is-centered api-error">
+              <div className="columns is-centered">
                 <div className="column">
-                  <div class="has-text-danger" role="alert">
+                  <div
+                    className="has-text-danger"
+                    role="alert"
+                    data-testid="api-error"
+                  >
                     {errorMessage}
                   </div>
                 </div>

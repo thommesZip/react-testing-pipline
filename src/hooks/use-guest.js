@@ -7,7 +7,6 @@ export function useGuest() {
 
   async function fetchData(name) {
     setStatus("loading");
-    console.log("🥶 fetchData");
 
     try {
       const response = await fetch("/lookup-name", {
@@ -19,28 +18,20 @@ export function useGuest() {
       const json = await response.json();
       setData(json);
       setStatus(response.ok ? "fetched" : "error");
-      console.log("🥶 json", json);
+
       return json;
     } catch (error) {
-      console.log("🥶 fetchData", error);
       setData(null);
-      setStatus("error");
+
       return error;
     }
-
-    console.log("🥶 fetchData ????");
   }
 
   async function checkGuestlist(name) {
-    console.log("🥶 checkGuestlist name", name);
     if (!name) return;
-    console.log("🥶 checkGuestlis try fetsching");
     const result = await fetchData(name);
-    console.log("🥶 checkGuestlis result", result);
     return result;
   }
-
-  console.log("😃", status, data);
 
   return {
     checkGuestlist,

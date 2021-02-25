@@ -25,7 +25,8 @@
     "eject": "react-scripts eject",
     "test:nowatch": "react-scripts test --watchAll=false",
     "cy:run": "cypress run",
-    "test:e2e": "npx cypress run"
+    "server:test": "start-server-and-test start http-get://localhost:3030 cy:run",
+    "test:all": "npm run test:nowatch && npm run cy:run"
   },
   "eslintConfig": {
     "extends": [
@@ -48,7 +49,10 @@
   "devDependencies": {
     "cypress": "^6.5.0",
     "msw": "^0.26.2",
+    "pre-commit": "^1.2.2",
     "start-server-and-test": "^1.12.0"
   },
-  "homepage": "https://testing-react-app.netlify.app"
+  "pre-commit": [
+    "test:nowatch"
+  ]
 }
