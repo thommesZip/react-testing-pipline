@@ -1,0 +1,36 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 100vh;
+
+  background: #007991;
+  background: linear-gradient(
+      45deg,
+      rgba(131, 96, 195, 0.8),
+      rgba(0, 209, 178, 0.8)
+    ),
+    url("./assets/san-diego.jpg") no-repeat top left;
+  background-size: cover;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.footer {
+  background: transparent;
+}
+
+.is-roundish {
+  border-radius: 6px;
+}
+
+.has-shadow {
+  box-shadow: 0 1.5em 2em -0.125em rgb(10 10 10 / 10%),
+    0 0 0 1px rgb(10 10 10 / 2%);
+}
+
+.field-error {
+  padding-left: 1em;
+}
