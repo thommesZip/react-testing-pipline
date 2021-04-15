@@ -1,10 +1,9 @@
-import logo from "./logo.svg";
-import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Door from "./screens/door";
 import Authorized from "./screens/authorized";
 import Rejected from "./screens/rejected";
 import PageNotFound from "./screens/page-not-found";
+import "./App.css";
 
 if (process.env.NODE_ENV === "development") {
   const { worker } = require("./mocks/browser");

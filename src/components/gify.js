@@ -32,6 +32,7 @@ export default function Gify({ embedUrl }) {
             style={{ position: "absolute" }}
             frameBorder="0"
             className="giphy-embed"
+            title="gify"
             allowFullScreen
           ></iframe>
         </div>

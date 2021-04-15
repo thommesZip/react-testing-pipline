@@ -39,7 +39,7 @@ function setTemporaryValue(
 }
 
 export default function Door() {
-  const { checkGuestlist, loading, error, data } = useGuest();
+  const { checkGuestlist, loading } = useGuest();
   const [gify, setGify] = React.useState(gifyUrl.door);
   const [errorMessage, setErrorMessage] = React.useState(null);
   let history = useHistory();

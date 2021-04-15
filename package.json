@@ -20,13 +20,17 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:cli": "cross-env BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:nowatch": "react-scripts test --watchAll=false",
+    "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "server:test": "start-server-and-test start http-get://localhost:3030 cy:run",
-    "test:all": "npm run test:nowatch && npm run cy:run"
+    "test:e2e": "start-server-and-test start:cli http://localhost:3000 cy:run",
+    "test:all": "npm run test:nowatch && npm run test:e2e",
+    "test:e2e:run": "start-server-and-test serve http://localhost:3000 cy:run",
+    "serve": "serve --no-clipboard --single --listen 3000 build"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "cypress": "^6.5.0",
     "msw": "^0.26.2",
     "pre-commit": "^1.2.2",

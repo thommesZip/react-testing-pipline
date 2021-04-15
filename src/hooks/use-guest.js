@@ -1,7 +1,7 @@
 import React from "react";
 
 export function useGuest() {
-  const [name, setName] = React.useState(null);
+  // const [name, setName] = React.useState(null);
   const [status, setStatus] = React.useState("idle");
   const [data, setData] = React.useState([]);
 
